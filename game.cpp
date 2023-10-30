@@ -1,5 +1,6 @@
 
 #include "game.hpp"
+#include "scripts/hello.lua"
 
 Game::Game(){};
 Game::~Game(){};
@@ -47,7 +48,7 @@ void Init::handleEvents()
 
 void Game::update()
 {
-    //add tick based items here
+    std::cout << GetHello() << std::endl;
 }
 
 void Game::render()
