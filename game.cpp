@@ -32,8 +32,16 @@ void Init::init(const char *title, int xpos, int ypos, int width, int height, Ui
     glBindBuffer(GL_FRAMEBUFFER, i.drawingbuffer);
 }
 
-void Game::handleEvents()
+void Init::handleEvents()
 {
+    SDL_Event event;
+    SDL_PollEvent(&event);
+
+    // Check for the quit event.
+    if (event.type == SDL_QUIT)
+    {
+        isRunning = false;
+    }
     //handle inputs
 }
 
@@ -60,5 +68,3 @@ void Game::clean()
     SDL_Quit();
     std::cout << "Game Cleaned" << std::endl;
 }
-
-

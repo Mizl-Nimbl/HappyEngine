@@ -16,6 +16,7 @@
 class Init {
 public:
     void init(const char* title, int xpos, int ypos, int width, int height, Uint32 flags);
+    void handleEvents();
     bool running() { return isRunning; }
     bool isRunning;
     int fullscreen = 1;
@@ -31,13 +32,12 @@ public:
     Game();
     ~Game();
 
-    void handleEvents();
     void update();
     void render();
     void clean();
     void flush();
+
 private:
-    bool isRunning;
 };
 
 #endif
