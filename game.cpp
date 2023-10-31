@@ -1,6 +1,5 @@
 
 #include "game.hpp"
-#include "scripts/hello.lua"
 
 Game::Game(){};
 Game::~Game(){};
@@ -31,6 +30,11 @@ void Init::init(const char *title, int xpos, int ypos, int width, int height, Ui
     }
     glGenBuffers(1, &i.drawingbuffer);
     glBindBuffer(GL_FRAMEBUFFER, i.drawingbuffer);
+
+    //separate this out later
+    loadScript("../scripts/hello.lua");
+    loadScript("../scripts/character/sprite.lua");
+    loadScript("../scripts/character/hitbox.lua");
 }
 
 void Init::handleEvents()
@@ -48,7 +52,9 @@ void Init::handleEvents()
 
 void Game::update()
 {
-    std::cout << GetHello() << std::endl;
+    i.loadScript("../scripts/character/logic.lua");
+    i.loadScript("../scripts/character/sprite.lua");
+    i.loadFunction("Run");
 }
 
 void Game::render()

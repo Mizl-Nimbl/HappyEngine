@@ -12,6 +12,9 @@
 #include <sstream>
 #include <vector>
 #include <map>
+#include <lua5.4/lua.h>
+#include <lua5.4/lualib.h>
+#include <lua5.4/lauxlib.h>
 
 class Init {
 public:
@@ -24,6 +27,17 @@ public:
     SDL_Renderer *renderer;
     SDL_GLContext gl;
     GLuint drawingbuffer;
+    lua_State* L = luaL_newstate();
+    void loadScript(const char* script)
+    {
+        luaL_openlibs(L);
+        luaL_dofile(L, script);
+    }
+    void loadFunction(const char* function)
+    {
+        lua_getglobal(L, function);
+        lua_pcall(L, 0, 0, 0);
+    }
 private:
 };
 

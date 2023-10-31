@@ -1,4 +1,6 @@
 function GetHello()
-    local hello = "hello"
-    return hello
+    print("hello")
+end
+function GetGoodbye()
+    print("goodbye")
 end

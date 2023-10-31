@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Site BuildName="Linux-c++"
+<Site BuildName="Linux-g++"
 	BuildStamp="20231031-1628-Experimental"
-	Name="saturnsphere"
+	Name="phobos"
 	Generator="ctest-3.25.1"
-	CompilerName="/usr/bin/c++"
-	CompilerVersion="13.2.1"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="12.2.0"
 	OSName="Linux"
 	Hostname="phobos"
 	OSRelease="6.1.0-13-amd64"
@@ -21,14 +21,14 @@
 	TotalVirtualMemory="9011"
 	TotalPhysicalMemory="7749"
 	LogicalProcessorsPerPhysical="2"
-	ProcessorClockFrequency="2914.47"
+	ProcessorClockFrequency="2900.08"
 	>
 	<Testing>
-		<StartDateTime>Oct 31 11:28 CDT</StartDateTime>
-		<StartTestTime>1698769710</StartTestTime>
+		<StartDateTime>Oct 31 11:36 CDT</StartDateTime>
+		<StartTestTime>1698770171</StartTestTime>
 		<TestList/>
-		<EndDateTime>Oct 31 11:28 CDT</EndDateTime>
-		<EndTestTime>1698769710</EndTestTime>
+		<EndDateTime>Oct 31 11:36 CDT</EndDateTime>
+		<EndTestTime>1698770171</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
