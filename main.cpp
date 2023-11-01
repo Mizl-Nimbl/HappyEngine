@@ -21,6 +21,7 @@ int main(int argc, char * argv[])
     init->init("HappyEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, flags);
     while(init->running())
     {
+        init->pushVariablesToLua();
         init->handleEvents();
         game->update();
         game->render();

@@ -21,6 +21,7 @@ public:
     void init(const char* title, int xpos, int ypos, int width, int height, Uint32 flags);
     void handleEvents();
     bool running() { return isRunning; }
+    void pushVariablesToLua();
     bool isRunning;
     int fullscreen = 1;
     SDL_Window *window;
@@ -37,6 +38,32 @@ public:
     {
         lua_getglobal(L, function);
         lua_pcall(L, 0, 0, 0);
+    }
+    //Varaible Loading
+    void loadNum(const char* varName, int myNum)
+    {
+        lua_pushinteger(L, myNum);
+        lua_setglobal(L, varName);
+    }
+    void loadFloat(const char* varName, float myNum)
+    {
+        lua_pushnumber(L, myNum);
+        lua_setglobal(L, varName);
+    }
+    void loadDouble(const char* varName, double myNum)
+    {
+        lua_pushnumber(L, myNum);
+        lua_setglobal(L, varName);
+    }
+    void loadString(const char* varName, const char* myNum)
+    {
+        lua_pushstring(L, myNum);
+        lua_setglobal(L, varName);
+    }
+    void loadBool(const char* varName, bool myNum)
+    {
+        lua_pushboolean(L, myNum);
+        lua_setglobal(L, varName);
     }
 private:
 };

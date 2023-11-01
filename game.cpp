@@ -37,6 +37,11 @@ void Init::init(const char *title, int xpos, int ypos, int width, int height, Ui
     loadScript("../scripts/character/hitbox.lua");
 }
 
+void Init::pushVariablesToLua()
+{
+    loadBool("Silly", true);
+}
+
 void Init::handleEvents()
 {
     SDL_Event event;
@@ -52,9 +57,12 @@ void Init::handleEvents()
 
 void Game::update()
 {
-    i.loadScript("../scripts/character/logic.lua");
-    i.loadScript("../scripts/character/sprite.lua");
-    i.loadFunction("Run");
+    //i.loadScript("../scripts/character/logic.lua");
+    //i.loadScript("../scripts/character/sprite.lua");
+    //i.loadFunction("Run");
+
+    i.loadScript("../scripts/hello.lua");
+    i.loadFunction("LoadingTest");
 }
 
 void Game::render()
@@ -73,5 +81,6 @@ void Game::clean()
     SDL_DestroyWindow(i.window);
     SDL_DestroyRenderer(i.renderer);
     SDL_Quit();
+    lua_close(i.L);
     std::cout << "Game Cleaned" << std::endl;
 }
