@@ -95,6 +95,8 @@ HappyEngine: CMakeFiles/HappyEngine.dir/build.make
 HappyEngine: /usr/lib64/libSDL2.so
 HappyEngine: /usr/lib64/libGL.so
 HappyEngine: /usr/lib64/libGLU.so
+HappyEngine: /usr/lib64/liblua5.4.so
+HappyEngine: /usr/lib64/libm.so
 HappyEngine: CMakeFiles/HappyEngine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mizl/Documents/HappyEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable HappyEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HappyEngine.dir/link.txt --verbose=$(VERBOSE)

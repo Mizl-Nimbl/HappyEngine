@@ -4,7 +4,6 @@
 CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp \
   /home/mizl/Documents/HappyEngine/game.cpp \
   /home/mizl/Documents/HappyEngine/game.hpp \
-  /home/mizl/Documents/HappyEngine/scripts/hello.lua \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GL/glu.h \
@@ -77,12 +76,15 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -127,11 +129,13 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -275,8 +279,14 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/lua5.4/lauxlib.h \
+  /usr/include/lua5.4/lua.h \
+  /usr/include/lua5.4/luaconf.h \
+  /usr/include/lua5.4/lualib.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -352,6 +362,7 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -375,6 +386,7 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -421,8 +433,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/popcntintrin.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/pmmintrin.h:
-
 /usr/lib64/gcc/x86_64-suse-linux/13/include/pkuintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/mwaitxintrin.h:
@@ -436,6 +446,8 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h:
 
@@ -454,8 +466,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/lib64/gcc/x86_64-suse-linux/13/include/enqcmdintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/clzerointrin.h:
-
-/usr/lib64/gcc/x86_64-suse-linux/13/include/clwbintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/cetintrin.h:
 
@@ -491,8 +501,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512ifmaintrin.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512fp16vlintrin.h:
-
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512cdintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512bitalgintrin.h:
@@ -511,8 +519,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/adxintrin.h:
 
-/usr/include/wchar.h:
-
 /usr/include/time.h:
 
 /usr/include/sys/types.h:
@@ -525,6 +531,8 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/strings.h:
 
+/usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h:
+
 /usr/include/string.h:
 
 /usr/include/stdlib.h:
@@ -533,7 +541,19 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/math.h:
 
+/usr/include/lua5.4/lualib.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/pmmintrin.h:
+
+/usr/include/lua5.4/lua.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/clwbintrin.h:
+
+/usr/include/lua5.4/lauxlib.h:
+
 /usr/include/locale.h:
+
+/usr/include/linux/limits.h:
 
 /usr/include/inttypes.h:
 
@@ -567,6 +587,8 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/c++/13/x86_64-suse-linux/bits/cpu_defines.h:
 
+/usr/include/c++/13/x86_64-suse-linux/bits/atomic_word.h:
+
 /usr/include/bits/types/wint_t.h:
 
 /usr/include/c++/13/bits/sstream.tcc:
@@ -578,10 +600,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/bits/types/locale_t.h:
 
 /usr/include/bits/types/clock_t.h:
-
-/usr/include/bits/time.h:
-
-/usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/types/__fpos64_t.h:
 
@@ -598,6 +616,10 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/lib64/gcc/x86_64-suse-linux/13/include/cldemoteintrin.h:
 
 /usr/include/bits/time64.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/bits/stdio_lim.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512bf16vlintrin.h:
 
@@ -625,15 +647,29 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/c++/13/tr1/beta_function.tcc:
+
 /usr/include/c++/13/tr1/poly_hermite.tcc:
 
 /usr/include/bits/mathcalls-helper-functions.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h:
-
-/usr/include/bits/math-vector.h:
-
 /usr/include/bits/locale.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512fp16vlintrin.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h:
+
+/usr/include/SDL2/SDL_blendmode.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/xsavecintrin.h:
+
+/usr/include/c++/13/bits/stl_function.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
 
 /usr/include/bits/iscanonical.h:
 
@@ -644,8 +680,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/bits/floatn.h:
 
 /usr/include/bits/endianness.h:
-
-/usr/include/SDL2/SDL.h:
 
 /usr/include/SDL2/SDL_cpuinfo.h:
 
@@ -659,6 +693,10 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/SDL2/SDL_timer.h:
 
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/bits/atomic_wide_counter.h:
+
 /usr/include/SDL2/SDL_gamecontroller.h:
 
 /usr/include/bits/timesize.h:
@@ -669,9 +707,7 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/asm/errno.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
+/usr/include/SDL2/SDL_loadso.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/wbnoinvdintrin.h:
 
@@ -723,8 +759,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/bits/floatn-common.h:
 
-/usr/include/c++/13/x86_64-suse-linux/bits/atomic_word.h:
-
 /usr/include/ctype.h:
 
 /usr/include/SDL2/SDL_gesture.h:
@@ -743,13 +777,23 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/c++/13/istream:
 
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/include/bits/types/timer_t.h:
+
+/usr/include/SDL2/SDL.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/include/c++/13/iosfwd:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/posix1_lim.h:
 
 /usr/include/wctype.h:
 
@@ -758,14 +802,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/bits/fp-fast.h:
 
 /usr/include/SDL2/SDL_audio.h:
-
-/home/mizl/Documents/HappyEngine/scripts/hello.lua:
-
-/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512vbmivlintrin.h:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/include/SDL2/SDL_metal.h:
 
 /usr/include/GL/glext.h:
 
@@ -791,10 +827,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/c++/13/limits:
 
-/usr/include/c++/13/cerrno:
-
-/usr/include/bits/waitflags.h:
-
 /usr/lib64/gcc/x86_64-suse-linux/13/include/rtmintrin.h:
 
 /usr/include/SDL2/SDL_mutex.h:
@@ -804,8 +836,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/c++/13/bits/hash_bytes.h:
 
 /usr/include/SDL2/SDL_assert.h:
-
-/usr/include/SDL2/SDL_loadso.h:
 
 /usr/include/SDL2/SDL_locale.h:
 
@@ -826,6 +856,14 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /home/mizl/Documents/HappyEngine/main.cpp:
 
 /usr/include/SDL2/SDL_main.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512vbmivlintrin.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/SDL2/SDL_metal.h:
+
+/usr/include/lua5.4/luaconf.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
 
@@ -857,10 +895,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/c++/13/tr1/riemann_zeta.tcc:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h:
-
-/usr/include/SDL2/SDL_blendmode.h:
-
 /usr/include/SDL2/SDL_render.h:
 
 /usr/include/SDL2/SDL_quit.h:
@@ -885,6 +919,8 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/SDL2/SDL_system.h:
 
+/usr/include/limits.h:
+
 /usr/include/c++/13/tr1/bessel_function.tcc:
 
 /usr/include/c++/13/initializer_list:
@@ -900,6 +936,16 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/SDL2/SDL_version.h:
 
 /usr/include/alloca.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/bits/uio_lim.h:
+
+/usr/include/c++/13/cerrno:
+
+/usr/include/bits/waitflags.h:
 
 /usr/include/bits/waitstatus.h:
 
@@ -918,6 +964,10 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/c++/13/tr1/gamma.tcc:
 
 /usr/include/bits/wctype-wchar.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/c++/13/cmath:
 
 /usr/include/c++/13/bit:
 
@@ -1067,18 +1117,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 
 /usr/include/c++/13/bits/stl_construct.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/xsavecintrin.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/13/bits/stl_function.h:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/c++/13/tr1/beta_function.tcc:
-
 /usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/c++/13/bits/stl_tree.h:
@@ -1098,8 +1136,6 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512vbmi2vlintrin.h:
 
 /usr/include/c++/13/clocale:
-
-/usr/include/c++/13/cmath:
 
 /usr/include/c++/13/cstdlib:
 
@@ -1132,6 +1168,10 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/c++/13/ios:
 
 /usr/include/c++/13/iostream:
+
+/usr/include/c++/13/x86_64-suse-linux/bits/c++config.h:
+
+/usr/include/c++/13/pstl/pstl_config.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avxvnniint8intrin.h:
 
@@ -1168,7 +1208,3 @@ CMakeFiles/HappyEngine.dir/main.cpp.o: /home/mizl/Documents/HappyEngine/main.cpp
 /usr/include/c++/13/tuple:
 
 /usr/include/c++/13/vector:
-
-/usr/include/c++/13/pstl/pstl_config.h:
-
-/usr/include/c++/13/x86_64-suse-linux/bits/c++config.h:
