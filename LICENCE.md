@@ -19,9 +19,9 @@
 	* Telling me that you have used my work
 	* Telling me that someone else has used my work
 	* Using my work and not telling me, letting me find out myself in any way
-		note: if you have used my work and not told me, keep it hidden.
+		**note: if you have used my work and not told me, keep it hidden.**
 	* Crediting my work
-		note: if you have used my work at all, keep it hidden.
+		**note: if you have used my work at all, keep it hidden.**
 
 2. Violators of this term will be subject to several legally binding arguments
 	
