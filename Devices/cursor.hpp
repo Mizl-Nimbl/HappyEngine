@@ -27,7 +27,7 @@ public:
     {
         glBegin(GL_TRIANGLES);
         glColor3f(1,1,1);
-        glVertex2f(coords[0] - 0.005f, -coords[1] + 0.015f);
+        glVertex2f(coords[0] - 0.004f, -coords[1] + 0.015f);
         glVertex2f(coords[0] - 0.002f, -coords[1] - 0.030f);
         glVertex2f(coords[0] + 0.015f, -coords[1] - 0.020f);
         glEnd();
