@@ -1,1 +1,7 @@
 build/*
+build/CMakeFiles/HappyEngine.dir/main.cpp.o.d
+build/CMakeFiles/HappyEngine.dir/main.cpp.o
+build/build.ninja
+build/.ninja_log
+build/.ninja_deps
+build/.cmake/api/v1/reply/*
