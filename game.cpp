@@ -1,11 +1,13 @@
 
 #include "game.hpp"
+#include "Devices/devices.hpp"
 
 Game::Game(){};
 Game::~Game(){};
 
 Init i;
 Game g;
+Cursor c;
 
 void Init::init(const char *title, int xpos, int ypos, int width, int height, Uint32 flags)
 {
@@ -47,12 +49,10 @@ void Init::handleEvents()
     SDL_Event event;
     SDL_PollEvent(&event);
 
-    // Check for the quit event.
     if (event.type == SDL_QUIT)
     {
         isRunning = false;
     }
-    //handle inputs
 }
 
 void Game::update()
@@ -61,13 +61,13 @@ void Game::update()
     //i.loadScript("../scripts/character/sprite.lua");
     //i.loadFunction("Run");
 
-    i.loadScript("../scripts/hello.lua");
-    i.loadFunction("LoadingTest");
+    //i.loadScript("../scripts/hello.lua");
+    //i.loadFunction("LoadingTest");
 }
 
 void Game::render()
 {
-    //add things to render
+    c.drawCursor(c.getCursorCoords());
     SDL_GL_SwapWindow(i.window);
 }
 
