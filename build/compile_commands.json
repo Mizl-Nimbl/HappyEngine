@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/mizl/Documents/HappyEngine/build",
-  "command": "/usr/bin/g++ -I/usr/include/lua5.4 -isystem /usr/include/SDL2 -g -o CMakeFiles/HappyEngine.dir/main.cpp.o -c /home/mizl/Documents/HappyEngine/main.cpp",
-  "file": "/home/mizl/Documents/HappyEngine/main.cpp"
-}
-]
