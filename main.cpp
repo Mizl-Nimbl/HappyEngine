@@ -25,6 +25,7 @@ int main(int argc, char * argv[])
         init->handleEvents();
         game->update();
         game->render();
+        SDL_Delay(16);
         game->flush();
     }
     game->clean();

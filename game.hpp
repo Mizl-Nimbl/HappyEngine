@@ -25,9 +25,7 @@ public:
     bool isRunning;
     int fullscreen = 1;
     SDL_Window *window;
-    SDL_Renderer *renderer;
     SDL_GLContext gl;
-    GLuint drawingbuffer;
     lua_State* L = luaL_newstate();
     void loadScript(const char* script)
     {
@@ -64,6 +62,21 @@ public:
     {
         lua_pushboolean(L, myNum);
         lua_setglobal(L, varName);
+    }
+    void setup(int width, int height)
+    {
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        glLoadIdentity();
+        glViewport(0, 0, width, height);
+        SDL_GL_SetSwapInterval(1);
+        SDL_ShowCursor(0);
+        glClearDepth(1.0f);         
+        glMatrixMode(GL_MODELVIEW_MATRIX);
+        glDepthFunc(GL_LEQUAL);
+        glShadeModel(GL_SMOOTH);
+        glEnable(GL_NORMALIZE);
+        glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); 
+        SDL_SetRelativeMouseMode(SDL_FALSE);
     }
 private:
 };

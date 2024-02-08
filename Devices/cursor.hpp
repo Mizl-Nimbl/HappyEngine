@@ -12,15 +12,16 @@
 class Cursor
 {
 public:
+    float *coords = new float[2];
+    int x, y;
+    int w, h;
 
-    float *getCursorCoords()
+    float *getCursorCoords(SDL_Window *window)
     {
-        SDL_Event mouse;
-        SDL_PollEvent(&mouse);
-        float* coords = new float[2];
-        coords[0] = mouse.motion.x;
-        coords[1] = mouse.motion.y;
-        std::cout << coords << std::endl;
+        SDL_GetGlobalMouseState(&x, &y);
+        SDL_GetWindowSize(window, &w, &h);
+        coords[0] = ((static_cast<float>(x) / static_cast<float>(w)) - 0.5f) * 2.0f;
+        coords[1] = ((static_cast<float>(y) / static_cast<float>(h)) - 0.5f) * 2.0f;
         return coords;
     }
     void drawCursor(float coords[2])
