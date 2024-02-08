@@ -70,7 +70,7 @@ void Game::update()
 void Game::render()
 {
     float topleft[2] = {-0.5, 0.5};
-    std::string a = "abcde";
+    std::string a = "abcdefg";
     f.word(a, topleft, 0.2f);
     
     c.drawCursor(c.coords); 

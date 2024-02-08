@@ -176,9 +176,11 @@ public:
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
-        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
         glVertex2f(pos[0] - scale * 0.25, pos[1]);
-        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1]);
         glEnd();
     }
     void h(float pos[2], float scale)
