@@ -1,7 +1,8 @@
-
 #include "game.hpp"
+#include "Scenes/scenes.hpp"
+#include "Resources/fonts.hpp"
 #include "Devices/devices.hpp"
-#include "Resources/resources.hpp"
+#include "extern.hpp"
 
 Game::Game(){};
 Game::~Game(){};
@@ -10,6 +11,7 @@ Init i;
 Game g;
 Cursor c;
 Font1 f;
+Mainmenu mm;
 
 void Init::init(const char *title, int xpos, int ypos, int width, int height, Uint32 flags)
 {
@@ -56,6 +58,20 @@ void Init::handleEvents()
     {
         isRunning = false;
     }
+    if (event.type == SDL_MOUSEBUTTONDOWN)
+    {
+        if (event.button.button == SDL_BUTTON_LEFT)
+        {
+            c.lmb = true;
+        }
+    }
+    else if (event.type == SDL_MOUSEBUTTONUP)
+    {
+        if (event.button.button == SDL_BUTTON_LEFT)
+        {
+            c.lmb = false;
+        }
+    }
 
     SDL_PumpEvents();
 }
@@ -69,10 +85,8 @@ void Game::update()
 
 void Game::render()
 {
-    float topleft[2] = {-0.5, 0.5};
-    std::string a = "abcdefg";
-    f.word(a, topleft, 0.2f);
     
+    mm.drawText();
     c.drawCursor(c.coords); 
     SDL_GL_SwapWindow(i.window);
 }

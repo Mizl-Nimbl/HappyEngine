@@ -14,9 +14,11 @@ class Font1
 public:
     void word(std::string &word, float pos[2], float scale)
     {
-        for(float i = 0; i <= word.length(); i++) 
+        float originalpos[2] = {pos[0], pos[1]};
+        int linesbroken = 0;
+        for(float count = 0; count <= word.length(); count++) 
         {
-            switch (word[i])
+            switch (word[count])
             {
                 case 'a':
                     a(pos, scale);
@@ -43,7 +45,7 @@ public:
                     h(pos, scale);
                     break;
                 case 'i':
-                    ii(pos, scale);
+                    i(pos, scale);
                     break;
                 case 'j':
                     j(pos, scale);
@@ -98,6 +100,9 @@ public:
                     break;
                 case ' ':
                     _(pos, scale);
+                    break;
+                case '\n':
+                    linebreak(pos, scale, originalpos, linesbroken);
                     break;
                 default:
                     break;
@@ -185,123 +190,218 @@ public:
     }
     void h(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINES);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
-    void ii(float pos[2], float scale)
+    void i(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINES);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void j(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINES);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void k(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void l(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void m(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.125, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.125, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void n(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void o(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINE_LOOP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
         glEnd();
     }
     void p(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.25);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
         glEnd();
     }
     void q(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.125, pos[1] - scale * 0.25);
+        glVertex2f(pos[0], pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void r(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.25);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void s(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.25);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.25);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void t(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void u(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1]);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1]);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void v(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void w(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.125, pos[1] - scale * 0.5);
+        glVertex2f(pos[0], pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.125, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void x(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
+        glBegin(GL_LINES);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void y(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0], pos[1]);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
         glEnd();
     }
     void z(float pos[2], float scale)
     {
         glBegin(GL_LINE_STRIP);
         glColor3f(0,1,0);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] + scale * 0.5);
+        glVertex2f(pos[0] - scale * 0.25, pos[1] - scale * 0.5);
+        glVertex2f(pos[0] + scale * 0.25, pos[1] - scale * 0.5);
         glEnd();
     }
     void _(float pos[2], float scale)
     {
-        glBegin(GL_LINE_STRIP);
-        glColor3f(0,1,0);
-        glEnd();
+        // Space
+    }
+    void linebreak(float pos[2], float scale, float originalpos[2], int &linesbroken)
+    {
+        pos[0] = originalpos[0] - scale * 0.6;
+        pos[1] = originalpos[1] - scale * 1.2 * (linesbroken + 1);
+        linesbroken++;
     }
 };
 

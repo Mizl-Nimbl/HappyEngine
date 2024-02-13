@@ -16,6 +16,9 @@ public:
     int x, y;
     int w, h;
 
+    bool lmb;
+    bool rmb;
+
     float *getCursorCoords(SDL_Window *window)
     {
         SDL_GetGlobalMouseState(&x, &y);
