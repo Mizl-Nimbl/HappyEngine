@@ -2,6 +2,7 @@
 #include "Scenes/scenes.hpp"
 #include "Resources/fonts.hpp"
 #include "Devices/devices.hpp"
+#include "Resources/Images/imager.hpp"
 #include "extern.hpp"
 
 Game::Game(){};
@@ -11,7 +12,10 @@ Init i;
 Game g;
 Cursor c;
 Font1 f;
-Mainmenu mm;
+Mainmenu m;
+Imager e;
+
+std::vector<GLuint> textures;
 
 void Init::init(const char *title, int xpos, int ypos, int width, int height, Uint32 flags)
 {
@@ -35,6 +39,7 @@ void Init::init(const char *title, int xpos, int ypos, int width, int height, Ui
         std::cout << "OpenGL instance created" << std::endl;
     }
     setup(width, height);
+    textures = e.loadImages(); // Assign the return value of e.loadImages() to e.textures
     /*
     loadScript("../scripts/hello.lua");
     loadScript("../scripts/character/sprite.lua");
@@ -85,9 +90,12 @@ void Game::update()
 
 void Game::render()
 {
-    
-    mm.drawText();
-    c.drawCursor(c.coords); 
+    if (!textures.size() == 0)
+    {
+        e.drawImages(i.window, textures.at(0));
+    }
+    m.drawText();
+    c.drawCursor(c.coords);
     SDL_GL_SwapWindow(i.window);
 }
 
